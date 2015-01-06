@@ -44,7 +44,7 @@ module WebpackRails
     end
 
     def entry_name
-      env["PATH_INFO"].gsub(%r[^/webpack-dev-server], '')
+      env["PATH_INFO"].gsub(%r[^/dev-server], '')
     end
   end
 end
