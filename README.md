@@ -6,7 +6,7 @@ webpack_rails
 Add `webpack_rails` to your Gemfile
 
 ```ruby
-gem 'webpack_rails'
+gem 'webpack_rails', '~> 1.0.0.pre', github: 'danott/webpack_rails'
 ```
 
 Install the default webpack configuration
