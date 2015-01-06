@@ -10,7 +10,7 @@ module WebpackRails
     end
 
     def self.[](key)
-      unless self._loaded?
+      unless self._loaded
         self.load
         self._loaded = true
       end
