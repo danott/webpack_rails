@@ -47,15 +47,24 @@ webpack-dev-server # assuming your $PATH is setup to find executables from node
 
 ## Running in production
 
-Similar to `rake assets:precompile`, there is `rake webpack:precompile`. Assets are saved to `public/webpack/#{entry}`. (Again, note that `entry` will include ".js")
+Similar to `rake assets:precompile`, there is `rake webpack:precompile`. Assets are saved to `public/webpack/#{digest}-#{entry}`. (Again, note that `entry` will include ".js")
 
 # Adding entry points
 
 In Sprockets, you add a new file to `assets.precompile`. With webpack, you just add a new entry point in `webpack.config.js`.
 
-## Stylesheets?
+# Stylesheets?
 
 I have expirimented with stylesheets, and it is possible to get them working. However, early on it's kind of rough, so I'm focusing on making JS work well for now. Using webpack sass/style loaders, it can be achieved in JS pretty easily.
+
+# Configuration
+
+For now, there is only one configuration: Whether to go through the dev server
+
+```ruby
+# You can override in [environment].rb
+WebpackRails.config.dev_server = true # Defaults to Rails.env.development?
+```
 
 ## License
 
