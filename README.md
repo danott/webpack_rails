@@ -3,25 +3,25 @@ webpack_rails
 
 # Installation
 
-1. Add `webpack_rails` to your Gemfile
+Add `webpack_rails` to your Gemfile
 
 ```ruby
 gem 'webpack_rails'
 ```
 
-2. Install the default webpack configuration
+Install the default webpack configuration
 
 ```
 rails generate webpack_rails:install
 ```
 
-3. Install webpack using node
+Install webpack using node
 
 ```
 npm install
 ```
 
-3. Update asset tags
+Update asset tags
 
 ```ruby
 # Sprockets
@@ -29,6 +29,12 @@ javascript_include_tag('application')
 
 # Webpack
 webpack_include_tag('application.js') # Note the appending of '.js'
+```
+
+Mount the engine at 'webpack'
+
+```ruby
+mount WebpackRails::Engine, at: "webpack"
 ```
 
 ## Running in development
