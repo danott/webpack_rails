@@ -1,12 +1,12 @@
-webpack-rails
+webpack_rails
 -------------
 
 # Installation
 
-1. Add `webpack-rails` to your Gemfile
+1. Add `webpack_rails` to your Gemfile
 
 ```ruby
-gem 'webpack-rails'
+gem 'webpack_rails'
 ```
 
 2. Install the default webpack configuration
