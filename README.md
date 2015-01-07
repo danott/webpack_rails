@@ -1,6 +1,10 @@
 webpack_rails
 -------------
 
+WORK IN PROGRESS. CONTRIBUTIONS WELCOME.
+
+Use Webpack in place of Sprockets.
+
 # Installation
 
 Add `webpack_rails` to your Gemfile
@@ -55,7 +59,7 @@ In Sprockets, you add a new file to `assets.precompile`. With webpack, you just 
 
 # Stylesheets?
 
-I have expirimented with stylesheets, and it is possible to get them working. However, early on it's kind of rough, so I'm focusing on making JS work well for now. Using webpack sass/style loaders, it can be achieved in JS pretty easily.
+I have expirimented with stylesheets, and it is possible to get them working. However, early on it's kind of rough, so I'm focusing on making JS work well for now. Using webpack sass/style loaders, it can be achieved in JS pretty easily. Checkout webpack.config.js in my [reaction][] repo for an example of using stylsheets. (This engine was derived from that testground)
 
 # Configuration
 
@@ -69,3 +73,6 @@ WebpackRails.config.dev_server = true # Defaults to Rails.env.development?
 ## License
 
 This project rocks and uses MIT-LICENSE.
+
+[reaction]: http://github.com/danott/reaction
+[Webpack's development server]: http://webpack.github.io/docs/webpack-dev-server.html
