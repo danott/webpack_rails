@@ -6,6 +6,7 @@ namespace :webpack do
 
   desc "Precompile assets using Webpack."
   task :precompile do
-    %x[webpack --config webpack.precompile.js]
+    mkdir_p "public/webpack"
+    sh "webpack --config webpack.precompile.js"
   end
 end
