@@ -5,17 +5,17 @@ module WebpackRails
     class_attribute :_entries
     class_attribute :_loaded
 
-    self._entries = Hash.new do |hash, key|
-      raise WebpackError.new "Unknown webpack entry: '#{key}', the named entries from 'webpack.config.js' are: #{hash.keys}. If you recently added this entry, you will need to restart the rails application."
+    self._entries = Hash.new do |hash, entry|
+      raise WebpackError.new "Unknown webpack entry: '#{entry}', the named entries from 'webpack.config.js' are: #{hash.keys}. If you recently added this entry, you will need to restart the rails application."
     end
 
-    def self.[](key)
+    def self.[](entry)
       unless self._loaded
         self.load
         self._loaded = true
       end
 
-      _entries[key]
+      _entries[entry]
     end
 
     def self.load
