@@ -1,12 +1,13 @@
 module WebpackRails
-  class Entries
-    class WebpackError < RuntimeError; end
+  class Precompiled
+    class NotPrecompiledError < RuntimeError; end
+    class NotFoundError < RuntimeError; end
 
     class_attribute :_entries
     class_attribute :_loaded
 
     self._entries = Hash.new do |hash, entry|
-      raise WebpackError.new "Unknown webpack entry: '#{entry}', the named entries from 'webpack.config.js' are: #{hash.keys}. If you recently added this entry, you will need to restart the rails application."
+      raise NotFoundError.new "Unknown webpack entry: '#{entry}', the named entries from the generated 'manifest.json' are: #{hash.keys}. If you recently added this entry, you will need to restart the rails application."
     end
 
     def self.[](entry)
@@ -20,7 +21,7 @@ module WebpackRails
 
     def self.load
       unless File.exist?(webpack_entries_manifest_fullpath)
-        raise WebpackError.new "Webpack entries manifest doesn't exist. 'rake webpack:precompile'"
+        raise NotPrecompiledError.new "The webpack entries manifest doesn't exist. 'rake webpack:precompile'"
       end
 
       self._entries = _entries.clear.merge(JSON.load(webpack_entries_manifest_fullpath))

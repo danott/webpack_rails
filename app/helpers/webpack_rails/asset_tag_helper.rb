@@ -4,7 +4,7 @@ module WebpackRails
       if WebpackRails.config.dev_server
         javascript_include_tag("/webpack/dev-server/#{entry}")
       else
-        javascript_include_tag("/webpack/#{WebpackRails::Entries[entry]}")
+        javascript_include_tag("/webpack/#{WebpackRails::Precompiled[entry]}")
       end
     end
   end

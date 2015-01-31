@@ -1,5 +1,4 @@
 require 'webpack_rails/config'
-require 'webpack_rails/entries'
 
 module WebpackRails
   class Engine < ::Rails::Engine

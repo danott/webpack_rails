@@ -1,8 +1,11 @@
 module WebpackRails
   class DevServer
+    class NotRunning < RuntimeError; end;
+
     def self.[](entry)
-      new(entry).to_s
+      new(entry).webpack_response
     rescue Errno::ECONNREFUSED
+      raise NotRunning
     end
 
     attr_reader :entry
@@ -11,15 +14,11 @@ module WebpackRails
       @entry = entry
     end
 
-    def to_s
-      webpack_response.body
-    end
-
-    private
-
     def webpack_response
       @webpack_response ||= Net::HTTP.get_response(webpack_request_uri)
     end
+
+    private
 
     def webpack_request_uri
       URI.parse("http://localhost:8080/#{entry}")

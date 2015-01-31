@@ -1,4 +1,4 @@
 WebpackRails::Engine.routes.draw do
-  get 'dev-server/*entry', to: 'application#dev_server'
-  get '*entry', to: 'application#precompile_miss'
+  get 'dev-server/*entry', to: 'entries#dev_server'
+  get '*entry', to: 'entries#precompile_miss'
 end
