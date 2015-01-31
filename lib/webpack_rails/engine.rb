@@ -1,7 +1,5 @@
 require 'webpack_rails/config'
 require 'webpack_rails/entries'
-require 'webpack_rails/dev_server_proxy'
-require 'webpack_rails/precompile_miss_notifier'
 
 module WebpackRails
   class Engine < ::Rails::Engine

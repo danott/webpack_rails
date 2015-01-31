@@ -67,7 +67,7 @@ For now, there is only one configuration: Whether to go through the dev server
 
 ```ruby
 # You can override in [environment].rb
-WebpackRails.config.dev_server = true # Defaults to Rails.env.development?
+WebpackRails.config.dev_server = true # Defaults to (Rails.env.development? || Rails.env.test?)
 ```
 
 ## License
