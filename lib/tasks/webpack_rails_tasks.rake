@@ -1,6 +1,4 @@
-WebpackRails.config.rake = true
-
-namespace :webpack do
+namespace :webpack_rails do
   require 'rake/clean'
   CLOBBER.include("public/webpack/*")
 
@@ -8,5 +6,9 @@ namespace :webpack do
   task :precompile do
     mkdir_p "public/webpack"
     sh "webpack --config webpack.precompile.js"
+  end
+
+  task :dev_server do
+    sh %q[./node_modules/.bin/webpack-dev-server --port $(rails runner "puts WebpackRails.config.dev_server_port")]
   end
 end

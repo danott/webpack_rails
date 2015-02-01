@@ -38,36 +38,33 @@ webpack_include_tag('application.js') # Note the appending of '.js'
 Mount the engine at 'webpack'
 
 ```ruby
-mount WebpackRails::Engine, at: "webpack"
+mount WebpackRails::Engine, at: 'webpack', as: 'webpack'
 ```
 
 ## Running in development
 
-In development, you'll want to use [Webpack's development server][]. Assuming your `$PATH` is set up to find node executables, this is simply:
+In development, you'll use [Webpack's development server][]. There's a rake task to ensure your Rails configuration gets cascaded down to `webpack-dev-server` correctly.
 
 ```bash
-webpack-dev-server # assuming your $PATH is setup to find executables from node
+rake webpack_rails:dev_server
 ```
 
 ## Running in production
 
-Similar to `rake assets:precompile`, there is `rake webpack:precompile`. Assets are saved to `public/webpack/#{digest}-#{entry}`. (Again, note that `entry` will include ".js")
+Similar to `rake assets:precompile`, there is `rake webpack_rails:precompile`. Assets are saved to `public/webpack/#{digest}-#{entry}`. (Again, note that `entry` will include ".js")
 
 # Adding entry points
 
 In Sprockets, you add a new file to `assets.precompile`. With webpack, you just add a new entry point in `webpack.config.js`.
 
-# Stylesheets?
-
-I have expirimented with stylesheets, and it is possible to get them working. However, early on it's kind of rough, so I'm focusing on making JS work well for now. Using webpack sass/style loaders, it can be achieved in JS pretty easily. Checkout webpack.config.js in my [reaction][] repo for an example of using stylsheets. (This engine was derived from that testground)
-
 # Configuration
 
-For now, there is only one configuration: Whether to go through the dev server
-
 ```ruby
-# You can override in [environment].rb
-WebpackRails.config.dev_server = true # Defaults to (Rails.env.development? || Rails.env.test?)
+# In [environment].rb or an initializer
+WebpackRails.setup do |config|
+  config.use_dev_server = (Rails.environment.development? || Rails.environment.test?)
+  config.dev_server_port = 8080
+end
 ```
 
 ## License

@@ -21,7 +21,7 @@ module WebpackRails
 
     def self.load
       unless File.exist?(webpack_entries_manifest_fullpath)
-        raise NotPrecompiledError.new "The webpack entries manifest doesn't exist. 'rake webpack:precompile'"
+        raise NotPrecompiledError.new "The webpack entries manifest doesn't exist. 'rake webpack_rails:precompile'"
       end
 
       self._entries = _entries.clear.merge(JSON.load(webpack_entries_manifest_fullpath))

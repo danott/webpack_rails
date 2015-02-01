@@ -21,7 +21,7 @@ module WebpackRails
     private
 
     def webpack_request_uri
-      URI.parse("http://localhost:8080/#{entry}")
+      URI.parse("http://localhost:#{WebpackRails.config.dev_server_port}/#{entry}")
     end
   end
 end
