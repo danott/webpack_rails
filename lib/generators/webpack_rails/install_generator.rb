@@ -3,10 +3,11 @@ module WebpackRails
     source_root File.expand_path('../templates', __FILE__)
 
     def install_everything
-      copy_file "package.json"
-      copy_file "webpack.config.js"
-      copy_file "webpack.precompile.js"
-      append_to_file ".gitignore", "node_modules"
+      copy_file 'package.json'
+      copy_file 'webpack.config.js'
+      copy_file 'webpack.precompile.js'
+      copy_file 'application.js', 'app/assets/javascripts/application.js'
+      append_to_file '.gitignore', 'node_modules'
     end
   end
 end

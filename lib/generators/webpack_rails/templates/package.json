@@ -1,17 +1,19 @@
 {
   "name": "GeneratedByWebpackRails",
-  "devDependencies": {
-    "webpack-dev-server": "^1.6.6"
-  },
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
   },
   "dependencies": {
+    "6to5-loader": "^3.0.0",
     "assets-webpack-plugin": "^0.1.0",
-    "es6-loader": "^0.2.0",
-    "jsx-loader": "^0.12.2",
-    "react": "^0.12.2",
-    "webpack": "^1.4.14"
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.0",
+    "exec-sync": "^0.1.6",
+    "expose-loader": "^0.6.0",
+    "imports-loader": "^0.6.3",
+    "script-loader": "^0.6.1",
+    "webpack": "^1.5.3",
+    "webpack-dev-server": "^1.7.0"
   }
 }
