@@ -9,7 +9,7 @@ Before you use this tool, it will be helpful to understand what it's goals are, 
 
 Some of the pain with managing JavaScript dependencies in Rails comes from trying to shove NPM thinking inside of Sprockets thinking, which are completely different. Building a system with support for two different paradigms is not the goal of this project.
 
-If it's helpful, it can be thought of this way - we're trying to build an alternative asset pipeline, that lives at `/webpack` instead of `/assets`. This avoids running into unexpected behavior, and a clear division of labor between the tools.
+If it's helpful, it can be thought of this way - we're trying to build an alternative asset pipeline, that lives at `/webpack` instead of `/assets`. This avoids running into unexpected behavior, while providing clear division of labor between the tools.
 
 # Installation
 
