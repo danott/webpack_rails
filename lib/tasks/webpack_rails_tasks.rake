@@ -5,7 +5,7 @@ namespace :webpack_rails do
   desc "Precompile assets using Webpack."
   task :precompile do
     mkdir_p "public/webpack"
-    sh "webpack --config webpack.precompile.js"
+    sh "./node_modules/.bin/webpack --config webpack.precompile.js"
   end
 
   task :dev_server do
