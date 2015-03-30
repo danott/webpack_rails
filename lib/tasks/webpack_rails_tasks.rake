@@ -9,6 +9,6 @@ namespace :webpack_rails do
   end
 
   task :dev_server do
-    sh %q[./node_modules/.bin/webpack-dev-server --port $(rails runner "puts WebpackRails.config.dev_server_port")]
+    sh "./node_modules/.bin/webpack-dev-server --port #{WebpackRails.config.dev_server_port}"
   end
 end
