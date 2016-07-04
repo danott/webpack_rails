@@ -1,3 +1,5 @@
+require "net/http"
+
 module WebpackRails
   class DevServer
     class NotRunning < RuntimeError; end;
