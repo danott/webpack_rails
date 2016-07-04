@@ -71,11 +71,9 @@ With webpack, you add a new entry point in `webpack.config.js`.
 # Configuration
 
 ```ruby
-# In [environment].rb or an initializer
-WebpackRails.setup do |config|
-  config.use_dev_server = (Rails.environment.development? || Rails.environment.test?)
-  config.dev_server_port = 8080
-end
+# In [environment].rb
+config.webpack_rails.use_dev_server = (Rails.environment.development? || Rails.environment.test?)
+config.webpack_rails.dev_server_port = 8080
 ```
 
 # Using assets from Gems
