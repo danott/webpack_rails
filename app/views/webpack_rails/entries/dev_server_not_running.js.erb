@@ -1,3 +1,25 @@
-console.info("Rails is configured to use the Webpack Dev Server, but the Webpack Dev Server isn't running!");
-console.info("Install with 'npm install'.");
-console.info("Run with 'rake webpack_rails:dev_server'.");
+// console.error(
+//   "Rails is configured to use the Webpack Dev Server, but the Webpack Dev Server isn't running!\n\
+//   1. Install with 'npm install'.\n\
+//   2. Run with 'rake webpack_rails:dev_server'."
+// );
+
+window.addEventListener("DOMContentLoaded", function() {
+  var element = document.createElement("div")
+
+  element.style.width = "100%"
+  element.style.height = "100%"
+  element.style.position = "fixed"
+  element.style.top = "0px"
+  element.style.backgroundColor = "red"
+  element.style.color = "white"
+  element.style.fontSize = "20px"
+  element.style.padding = "20px"
+  element.style.lineHeight = "30px"
+  element.style.fontFamily = "monospace"
+  element.style.whiteSpace = "pre-wrap"
+  element.style.zIndex = "1000000"
+  element.textContent = "Rails is configured to use the Webpack Dev Server, but the Webpack Dev Server isn't running!\n\n1. Install with 'npm install'\n2. Run with 'rake webpack_rails:dev_server'"
+
+  document.body.appendChild(element)
+})
