@@ -8,6 +8,7 @@ namespace :webpack_rails do
     sh "./node_modules/.bin/webpack -p --config webpack.precompile.js"
   end
 
+  desc "Run the webpack dev server"
   task dev_server: :write_asset_paths_json do
     sh "./node_modules/.bin/webpack-dev-server --port #{WebpackRails.config.dev_server_port}"
   end
